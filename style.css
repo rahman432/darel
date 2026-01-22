@@ -147,3 +147,11 @@ nav a:hover {
 .nav-logo {
   height: 40px;
 }
+
+.foto-artikel {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+}
