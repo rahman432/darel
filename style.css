@@ -55,3 +55,17 @@ footer {
   width: 250px;
   margin-bottom: 15px;
 }
+
+/* GALERI FOTO BERANDA */
+.galeri {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.galeri img {
+  width: 250px;
+  border-radius: 10px;
+}
