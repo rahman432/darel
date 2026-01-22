@@ -92,3 +92,33 @@ footer {
   object-fit: cover;
   border-radius: 8px;
 }
+
+/* NAVBAR */
+nav {
+  background: #2e7d32;
+  padding: 15px 0;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;      /* GEDEIN TULISAN */
+  padding: 10px 15px;  /* GEDEIN AREA KLIK */
+  display: inline-block;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.2);
+  border-radius: 5px;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 600px) {
+  nav a {
+    display: block;
+    font-size: 20px;
+    margin: 8px 0;
+  }
+}
