@@ -1,20 +1,54 @@
+/* ===== RESET & BODY ===== */
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  line-height: 1.7;
+  color: #333;
 }
 
+/* ===== NAVBAR ===== */
 nav {
   background: #2e7d32;
-  padding: 10px;
+  padding: 15px 0;
   text-align: center;
 }
 
 nav a {
   color: white;
-  margin: 0 10px;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 15px;
+  display: inline-block;
 }
 
+nav a:hover {
+  background: rgba(255,255,255,0.2);
+  border-radius: 5px;
+}
+
+/* Navbar versi flex (kalo dipake di halaman lain) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2e7d32;
+  padding: 10px 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.nav-logo {
+  height: 40px;
+}
+
+/* ===== HEADER & SECTION ===== */
 header {
   padding: 40px;
   text-align: center;
@@ -32,31 +66,12 @@ footer {
   color: white;
 }
 
-.produk {
-  border: 1px solid #ccc;
-  padding: 15px;
-  max-width: 300px;
-}
-
-.harga {
-  font-weight: bold;
-  color: #2e7d32;
-}
-
-.btn {
-  display: inline-block;
-  padding: 8px 12px;
-  background: #2e7d32;
-  color: white;
-  text-decoration: none;
-}
-
 .logo {
   width: 90px;
   margin-bottom: 15px;
 }
 
-/* GALERI FOTO BERANDA */
+/* ===== GALERI BERANDA ===== */
 .galeri {
   margin-top: 20px;
   display: flex;
@@ -70,98 +85,7 @@ footer {
   border-radius: 10px;
 }
 
-/* MARKETPLACE */
-.produk-list {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.produk {
-  border: 1px solid #ddd;
-  padding: 15px;
-  width: 150px;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.produk img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-/* NAVBAR */
-nav {
-  background: #2e7d32;
-  padding: 15px 0;
-  text-align: center;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;      /* GEDEIN TULISAN */
-  padding: 10px 15px;  /* GEDEIN AREA KLIK */
-  display: inline-block;
-}
-
-nav a:hover {
-  background: rgba(255,255,255,0.2);
-  border-radius: 5px;
-}
-
-/* RESPONSIVE HP */
-@media (max-width: 600px) {
-  nav a {
-    display: block;
-    font-size: 20px;
-    margin: 8px 0;
-  }
-}
-
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #2e7d32;
-  padding: 10px 20px;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-  margin-right: 15px;
-}
-
-.navbar a:hover {
-  text-decoration: underline;
-}
-
-.nav-logo {
-  height: 40px;
-}
-
-.foto-artikel {
-  width: 100%;
-  max-width: 250px;
-  display: block;
-  margin: 20px auto;
-  border-radius: 8px;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.7;
-  color: #333;
-}
-
+/* ===== ARTIKEL ===== */
 .artikel {
   max-width: 800px;
   margin: 40px auto;
@@ -180,56 +104,27 @@ body {
   font-size: 16px;
 }
 
-@media (max-width: 600px) {
-  .artikel h2 {
-    font-size: 22px;
-  }
-}
-
-.produk {
-  border: 1px solid #ddd;
-  padding: 12px;
-  border-radius: 10px;
-  background: #fff;
-}
-
-.produk img {
+.foto-artikel {
   width: 100%;
+  max-width: 250px;
+  display: block;
+  margin: 20px auto;
   border-radius: 8px;
 }
 
-.harga {
-  font-weight: bold;
-  color: #2e7d32;
+/* ===== MARKETPLACE (FINAL & AMAN) ===== */
+.produk-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* HP 2 kolom */
+  gap: 12px;
+  padding: 10px;
 }
 
-.btn {
-  display: block;
-  text-align: center;
-  background: #25d366;
-  color: white;
-  padding: 8px;
-  border-radius: 6px;
-  text-decoration: none;
-  margin-top: 8px;
-}
-
-/* HOVER EFFECT */
-.produk {
-  transition: 0.3s ease;
-}
-
-.produk:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-.btn {
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #1ebe5d;
+/* Laptop */
+@media (min-width: 900px) {
+  .produk-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .produk-link {
@@ -239,12 +134,24 @@ body {
 }
 
 .produk {
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
   transition: 0.3s ease;
 }
 
 .produk:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.produk img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .produk h3 {
@@ -254,22 +161,36 @@ body {
 
 .harga {
   font-size: 13px;
+  font-weight: bold;
+  color: #2e7d32;
 }
 
 .btn {
-  font-size: 13px;
+  display: block;
+  text-align: center;
+  background: #25d366;
+  color: white;
   padding: 7px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 8px;
+  font-size: 13px;
+  transition: 0.3s;
 }
 
-.produk-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  padding: 10px;
+.btn:hover {
+  background: #1ebe5d;
 }
 
-@media (min-width: 900px) {
-  .produk-list {
-    grid-template-columns: repeat(3, 1fr);
+/* ===== RESPONSIVE NAV HP ===== */
+@media (max-width: 600px) {
+  nav a {
+    display: block;
+    font-size: 20px;
+    margin: 8px 0;
+  }
+
+  .artikel h2 {
+    font-size: 22px;
   }
 }
