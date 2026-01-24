@@ -186,12 +186,6 @@ body {
   }
 }
 
-.produk-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
 .produk {
   border: 1px solid #ddd;
   padding: 12px;
@@ -251,12 +245,6 @@ body {
 .produk:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-@media (max-width: 600px) {
-  .produk-list {
-    grid-template-columns: 1fr;
-  }
 }
 
 .produk h3 {
