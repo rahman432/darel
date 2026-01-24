@@ -294,4 +294,16 @@ footer {
 
 .produk {
   height: 100%;          /* BIAR RAPI */
+/* ===== FIX JARAK BARIS MARKETPLACE ===== */
+.produk-link {
+  display: block;        /* WAJIB */
+}
+
+.produk-list {
+  column-gap: 16px;
+  row-gap: 24px;         /* JARAK ATAS-BAWAH */
+}
+
+.produk {
+  height: 100%;          /* BIAR RAPI */
 }
