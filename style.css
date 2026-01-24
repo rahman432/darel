@@ -243,3 +243,41 @@ footer {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
+
+/* ===== JARAK AMAN MARKETPLACE ===== */
+.produk-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;              /* JARAK ANTAR PRODUK */
+  padding: 16px;          /* JARAK KE TEPI */
+}
+
+@media (min-width: 900px) {
+  .produk-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.produk {
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+/* BIAR ISI GA NEMPEL */
+.produk h3 {
+  margin: 8px 0 4px;
+}
+
+.harga {
+  margin: 4px 0;
+}
+
+/* GAMBAR LEBIH RAPI */
+.produk img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
