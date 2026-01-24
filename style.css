@@ -213,3 +213,33 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.produk-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 10px;
+}
+
+@media (min-width: 900px) {
+  .produk-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.produk-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.produk {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  transition: 0.3s;
+}
+
+.produk:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
