@@ -260,3 +260,16 @@ body {
   font-size: 13px;
   padding: 7px;
 }
+
+.produk-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 10px;
+}
+
+@media (min-width: 900px) {
+  .produk-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
