@@ -185,3 +185,70 @@ body {
     font-size: 22px;
   }
 }
+
+.produk-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.produk {
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.produk img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.harga {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  background: #25d366;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+/* HOVER EFFECT */
+.produk {
+  transition: 0.3s ease;
+}
+
+.produk:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.btn {
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1ebe5d;
+}
+
+.produk-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.produk {
+  transition: 0.3s ease;
+}
+
+.produk:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
