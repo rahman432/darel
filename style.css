@@ -194,3 +194,22 @@ footer {
     font-size: 22px;
   }
 }
+
+/* ===== FORCE GRID MARKETPLACE ===== */
+.produk-list {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 10px;
+}
+
+.produk {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (min-width: 900px) {
+  .produk-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
