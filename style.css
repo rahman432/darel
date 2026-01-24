@@ -258,3 +258,17 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+.produk h3 {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.harga {
+  font-size: 13px;
+}
+
+.btn {
+  font-size: 13px;
+  padding: 7px;
+}
