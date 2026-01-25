@@ -8,12 +8,18 @@
 </head>
 <body>
 
-<nav>
-  <a href="index.html">Beranda</a>
-  <a href="tentang.html">Tentang</a>
-  <a href="artikel.html">Artikel</a>
-  <a href="marketplace.html">Marketplace</a>
-  <a href="kontak.html">Kontak</a>
+<nav class="navbar">
+  <div class="nav-logo">DAREL</div>
+
+  <div class="burger" onclick="toggleMenu()">☰</div>
+
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="tentang.html">Tentang</a></li>
+    <li><a href="artikel.html">Artikel</a></li>
+    <li><a href="marketplace.html">Marketplace</a></li>
+    <li><a href="kontak.html">Kontak</a></li>
+  </ul>
 </nav>
 
   <div class="nav-right">
@@ -34,5 +40,10 @@
   <p>© 2026 Komunitas DAREL</p>
 </footer>
 
+<script>
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
 </body>
 </html>
