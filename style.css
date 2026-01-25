@@ -206,3 +206,71 @@ footer {
     font-size: 22px;
   }
 }
+
+/* ===== BERANDA ===== */
+.hero {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f1f8f4; /* aman tanpa foto */
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  color: #2e7d32;
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Preview section */
+.preview {
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.preview h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+.preview p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+/* Tombol outline (khusus beranda) */
+.btn-outline {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 2px solid #2e7d32;
+  color: #2e7d32;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: #2e7d32;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+  }
+}
