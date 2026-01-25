@@ -274,3 +274,72 @@ footer {
     font-size: 16px;
   }
 }
+
+/* ===== NAVBAR BURGER ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: #2e7d32;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Menu desktop */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Burger icon */
+.burger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== MOBILE MODE ===== */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #2e7d32;
+    width: 200px;
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li a {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+}

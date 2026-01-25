@@ -8,14 +8,30 @@
 </head>
 <body>
 
-<nav>
+<!-- NAVBAR + BURGER -->
+<nav class="navbar">
+  <div class="nav-logo">DAREL</div>
+
+  <div class="burger" onclick="toggleMenu()">☰</div>
+
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="tentang.html">Tentang</a></li>
+    <li><a href="artikel.html">Artikel</a></li>
+    <li><a href="marketplace.html">Marketplace</a></li>
+    <li><a href="kontak.html">Kontak</a></li>
+  </ul>
+</nav>
+
 <!-- HERO BERANDA -->
 <header class="hero">
-  <h1>DAREL</h1>
-  <p class="hero-sub">
-    Komunitas Pemuda Pelestari Budaya & Alam Minangkabau<br>
-    Nagari Sirukam
-  </p>
+  <div class="hero-inner">
+    <h1>DAREL</h1>
+    <p class="hero-sub">
+      Komunitas Pemuda Pelestari Budaya & Alam Minangkabau<br>
+      Nagari Sirukam
+    </p>
+  </div>
 </header>
 
 <!-- TENTANG SINGKAT -->
@@ -66,5 +82,10 @@
   <p>© 2026 Komunitas DAREL</p>
 </footer>
 
+<script>
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
 </body>
 </html>
