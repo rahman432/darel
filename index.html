@@ -8,10 +8,9 @@
 </head>
 <body>
 
-<!-- NAVBAR + BURGER -->
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-logo">DAREL</div>
-
   <div class="burger" onclick="toggleMenu()">☰</div>
 
   <ul class="nav-menu" id="navMenu">
@@ -23,19 +22,18 @@
   </ul>
 </nav>
 
-<!-- HERO BERANDA -->
-<header class="hero">
-  <div class="hero-inner">
-    <h1>DAREL</h1>
-    <p class="hero-sub">
-      Komunitas Pemuda Pelestari Budaya & Alam Minangkabau<br>
-      Nagari Sirukam
-    </p>
-  </div>
+<!-- HERO -->
+<header class="hero reveal">
+  <img src="logo.png" alt="Logo DAREL" class="logo">
+  <h1>DAREL</h1>
+  <p>
+    Komunitas Pemuda Pelestari Budaya & Alam Minangkabau<br>
+    Nagari Sirukam
+  </p>
 </header>
 
-<!-- TENTANG SINGKAT -->
-<section class="preview">
+<!-- TENTANG -->
+<section class="section reveal">
   <h2>Tentang DAREL</h2>
   <p>
     DAREL adalah komunitas pemuda yang berfokus pada penggalian,
@@ -45,32 +43,23 @@
   <a href="tentang.html" class="btn-outline">Selengkapnya</a>
 </section>
 
-</nav>
-
-<header>
-  <h1>DAREL</h1>
-  <p>DAREK EL YUNISIAH</p>
-   <img src="logo.png" alt="Logo DAREL" class="logo">
-  <p>Komunitas pelestari budaya alam Minangkabau di Nagari Sirukam</p>
-</header>
-
-<section>
+<!-- SAMBUTAN -->
+<section class="section light reveal">
   <h2>Selamat Datang</h2>
   <p>
-    DAREL hadir sebagai wadah pemuda untuk menggali, menjaga, dan
-    melestarikan budaya serta alam Minangkabau. 
-    darel sendiri lahir karna rasa peduli terhadap lingkungan dan budaya adat
-    yang pelan pelan mulai hilang
+    DAREL hadir sebagai wadah pemuda untuk menjaga identitas budaya
+    dan kelestarian alam yang perlahan mulai tergerus zaman.
   </p>
-  <section>
-  
-  <!-- FOUNDER DAREL -->
-  <div class="galeri">
-    <img src="gambar-1.jpg" alt="Kegiatan Darel 1">
-    <img src="gambar-2.jpg" alt="Kegiatan Darel 2">
-    <img src="gambar-3.jpg" alt="Kegiatan Darel 3">
-  </div>
 </section>
+
+<!-- GALERI -->
+<section class="section reveal">
+  <h2>Kegiatan Kami</h2>
+  <div class="galeri">
+    <img src="gambar-1.jpg" alt="Kegiatan 1">
+    <img src="gambar-2.jpg" alt="Kegiatan 2">
+    <img src="gambar-3.jpg" alt="Kegiatan 3">
+  </div>
 </section>
 
 <footer>
@@ -81,6 +70,18 @@
 function toggleMenu() {
   document.getElementById("navMenu").classList.toggle("active");
 }
+
+/* SCROLL ANIMATION */
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+});
 </script>
+
 </body>
 </html>
