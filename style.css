@@ -1,17 +1,16 @@
-/* ===== RESET ===== */
+/* ===== RESET & BODY ===== */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
   line-height: 1.7;
   color: #333;
 }
 
-/* ===== NAVBAR BURGER ===== */
+/* ================= NAVBAR + BURGER ================= */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -24,7 +23,7 @@ body {
 }
 
 .nav-logo {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   color: white;
 }
@@ -33,6 +32,8 @@ body {
   list-style: none;
   display: flex;
   gap: 18px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu li a {
@@ -62,6 +63,7 @@ body {
     width: 200px;
     flex-direction: column;
     display: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   }
 
   .nav-menu.active {
@@ -74,7 +76,7 @@ body {
   }
 }
 
-/* ===== HERO ===== */
+/* ================= HERO BERANDA ================= */
 .hero {
   padding: 90px 20px;
   text-align: center;
@@ -84,33 +86,58 @@ body {
 .hero h1 {
   font-size: 48px;
   margin-bottom: 10px;
+  letter-spacing: 2px;
   color: #2e7d32;
 }
 
 .hero-sub {
   font-size: 18px;
   color: #555;
+  line-height: 1.6;
 }
 
-.logo {
-  width: 90px;
-  margin-bottom: 15px;
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+  }
 }
 
-/* ===== SECTION ===== */
+/* ================= SECTION UMUM ================= */
 section {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: auto;
+  padding: 30px;
+}
+
+footer {
   text-align: center;
+  padding: 15px;
+  background: #2e7d32;
+  color: white;
 }
 
-section h2 {
-  color: #2e7d32;
+/* ================= PREVIEW BERANDA ================= */
+.preview {
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.preview h2 {
+  font-size: 28px;
   margin-bottom: 15px;
+  color: #2e7d32;
 }
 
-/* ===== BUTTON ===== */
+.preview p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 25px;
+}
+
 .btn-outline {
   display: inline-block;
   padding: 10px 18px;
@@ -119,30 +146,135 @@ section h2 {
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 .btn-outline:hover {
   background: #2e7d32;
-  color: white;
+  color: #fff;
 }
 
-/* ===== GALERI ===== */
+/* ================= IMAGE SYSTEM (FINAL) ================= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Logo */
+.logo {
+  width: 64px;
+  margin: 12px auto;
+}
+
+/* Galeri */
 .galeri {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
   margin-top: 30px;
 }
 
 .galeri img {
-  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ================= ARTIKEL ================= */
+.artikel {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.artikel h1,
+.artikel h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.artikel p {
+  text-align: justify;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.foto-artikel {
+  max-width: 420px;
+  margin: 24px auto;
   border-radius: 14px;
 }
 
-/* ===== FOOTER ===== */
-footer {
+/* ================= MARKETPLACE ================= */
+.produk-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 16px;
+}
+
+@media (min-width: 900px) {
+  .produk-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.produk-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.produk {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.produk:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.produk img {
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.produk h3 {
+  font-size: 14px;
+  margin: 4px 0 0;
   text-align: center;
-  padding: 20px;
-  background: #2e7d32;
+}
+
+.harga {
+  font-size: 13px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+/* Tombol */
+.btn {
+  background: #25d366;
   color: white;
+  padding: 7px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 6px;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1ebe5d;
 }
