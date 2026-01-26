@@ -32,7 +32,7 @@ img {
 .artikel img,
 .artikel-detail img,
 .artikel-content img {
-  max-width: 360px;
+  max-width: 90px;
   width: 100%;
   margin: 20px auto;
   border-radius: 14px;
@@ -41,7 +41,7 @@ img {
 
 /* ================= FIX HALAMAN TENTANG ================= */
 section img {
-  max-width: 420px;
+  max-width: 200px;
   width: 100%;
   margin: 20px auto;
   object-fit: contain;
