@@ -1,280 +1,112 @@
-/* ===== RESET & BODY ===== */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  line-height: 1.7;
-  color: #333;
-}
-
-/* ================= NAVBAR + BURGER ================= */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 20px;
-  background: #2e7d32;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-.nav-logo {
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-}
-
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 18px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-menu li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.burger {
-  display: none;
-  font-size: 26px;
-  color: white;
-  cursor: pointer;
-}
-
-/* ===== MOBILE NAV ===== */
-@media (max-width: 768px) {
-  .burger {
-    display: block;
-  }
-
-  .nav-menu {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #2e7d32;
-    width: 200px;
-    flex-direction: column;
-    display: none;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .nav-menu li a {
-    padding: 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-  }
-}
-
-/* ================= HERO BERANDA ================= */
-.hero {
-  padding: 90px 20px;
-  text-align: center;
-  background: #f1f8f4;
-}
-
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-  color: #2e7d32;
-}
-
-.hero-sub {
-  font-size: 18px;
-  color: #555;
-  line-height: 1.6;
-}
-
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .hero-sub {
-    font-size: 16px;
-  }
-}
-
-/* ================= SECTION UMUM ================= */
-section {
-  padding: 30px;
-}
-
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #2e7d32;
-  color: white;
-}
-
-/* ================= PREVIEW BERANDA ================= */
-.preview {
-  max-width: 800px;
-  margin: 60px auto;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.preview h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: #2e7d32;
-}
-
-.preview p {
-  font-size: 16px;
-  color: #444;
-  margin-bottom: 25px;
-}
-
-.btn-outline {
-  display: inline-block;
-  padding: 10px 18px;
-  border: 2px solid #2e7d32;
-  color: #2e7d32;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn-outline:hover {
-  background: #2e7d32;
-  color: #fff;
-}
-
-/* ================= IMAGE SYSTEM (FINAL) ================= */
+/* ================= FIX GAMBAR GLOBAL ================= */
+/* Semua gambar ga boleh kebablasan */
 img {
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
-/* Logo */
+/* Logo khusus (biar ga ikut gede) */
 .logo {
-  width: 64px;
-  margin: 12px auto;
+  width: 110px;
+  max-width: 110px;
+  margin: 16px auto;
 }
 
-/* Galeri */
-.galeri {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 14px;
-  margin-top: 30px;
+/* Logo di artikel (lebih kecil lagi) */
+.artikel img:first-of-type {
+  max-width: 140px;
 }
 
-.galeri img {
-  height: 130px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* ================= ARTIKEL ================= */
-.artikel {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.artikel h1,
-.artikel h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.artikel p {
-  text-align: justify;
-  margin-bottom: 16px;
-  font-size: 16px;
-}
-
-.foto-artikel {
-  max-width: 420px;
-  margin: 24px auto;
-  border-radius: 14px;
-}
-
-/* ================= MARKETPLACE ================= */
-.produk-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  padding: 16px;
-}
-
-@media (min-width: 900px) {
-  .produk-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.produk-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-
-.produk {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 14px;
-  padding: 10px;
-
+/* ================= FIX HEADER + NAV ================= */
+.navbar {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 6px;
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.produk:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-}
-
-.produk img {
-  height: 120px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.produk h3 {
-  font-size: 14px;
-  margin: 4px 0 0;
-  text-align: center;
-}
-
-.harga {
-  font-size: 13px;
+.nav-logo {
+  font-size: 20px;
   font-weight: bold;
-  color: #2e7d32;
 }
 
-/* Tombol */
-.btn {
-  background: #25d366;
-  color: white;
-  padding: 7px;
-  border-radius: 6px;
-  text-decoration: none;
-  margin-top: 6px;
-  font-size: 13px;
-  transition: 0.3s;
+/* ================= FIX ARTIKEL IMAGE ================= */
+.artikel img,
+.artikel-detail img,
+.artikel-content img {
+  max-width: 360px;
+  width: 100%;
+  margin: 20px auto;
+  border-radius: 14px;
+  object-fit: cover;
 }
 
-.btn:hover {
-  background: #1ebe5d;
+/* ================= FIX HALAMAN TENTANG ================= */
+section img {
+  max-width: 420px;
+  width: 100%;
+  margin: 20px auto;
+  object-fit: contain;
+}
+
+/* ================= FIX GALERI ================= */
+.galeri img {
+  height: 160px;
+  object-fit: cover;
+}
+
+/* ================= DARK MODE ================= */
+/* Aktif otomatis kalau HP / browser dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0f172a;
+    color: #e5e7eb;
+  }
+
+  header,
+  section,
+  .hero {
+    background: #0f172a;
+  }
+
+  .navbar {
+    background: #14532d;
+  }
+
+  .nav-menu {
+    background: #14532d;
+  }
+
+  .preview h2,
+  .hero h1,
+  .artikel h1,
+  .artikel h2 {
+    color: #4ade80;
+  }
+
+  .hero-sub,
+  p {
+    color: #cbd5f5;
+  }
+
+  .btn-outline {
+    border-color: #4ade80;
+    color: #4ade80;
+  }
+
+  .btn-outline:hover {
+    background: #4ade80;
+    color: #022c22;
+  }
+
+  footer {
+    background: #14532d;
+  }
+
+  .produk {
+    background: #020617;
+    border-color: #1e293b;
+  }
+
+  .harga {
+    color: #4ade80;
+  }
 }
