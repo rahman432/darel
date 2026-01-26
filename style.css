@@ -1,112 +1,209 @@
-/* ================= FIX GAMBAR GLOBAL ================= */
-/* Semua gambar ga boleh kebablasan */
-img {
-  max-width: 100%;
-  height: auto;
+/* ===== RESET & BODY ===== */
+* {
+  box-sizing: border-box;
 }
 
-/* Logo khusus (biar ga ikut gede) */
-.logo {
-  width: 110px;
-  max-width: 110px;
-  margin: 16px auto;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1.7;
+  color: #333;
+  background: #fff;
 }
 
-/* Logo di artikel (lebih kecil lagi) */
-.artikel img:first-of-type {
-  max-width: 140px;
-}
-
-/* ================= FIX HEADER + NAV ================= */
+/* ================= NAVBAR + BURGER ================= */
 .navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 14px 20px;
+  background: #2e7d32;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* LOGO DI NAVBAR (KANAN) */
+.navbar .logo {
+  width: 80px; /* sedikit lebih gede */
+  margin: 0;
 }
 
 .nav-logo {
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
   font-weight: bold;
 }
 
-/* ================= FIX ARTIKEL IMAGE ================= */
-.artikel img,
-.artikel-detail img,
-.artikel-content img {
-  max-width: 90px;
-  width: 100%;
-  margin: 20px auto;
-  border-radius: 14px;
-  object-fit: cover;
+.burger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
 }
 
-/* ================= FIX HALAMAN TENTANG ================= */
-section img {
-  max-width: 200px;
-  width: 100%;
-  margin: 20px auto;
-  object-fit: contain;
-}
-
-/* ================= FIX GALERI ================= */
-.galeri img {
-  height: 160px;
-  object-fit: cover;
-}
-
-/* ================= DARK MODE ================= */
-/* Aktif otomatis kalau HP / browser dark mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #0f172a;
-    color: #e5e7eb;
-  }
-
-  header,
-  section,
-  .hero {
-    background: #0f172a;
-  }
-
-  .navbar {
-    background: #14532d;
+/* ===== MOBILE NAV ===== */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
   }
 
   .nav-menu {
-    background: #14532d;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #2e7d32;
+    width: 200px;
+    flex-direction: column;
+    display: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   }
 
-  .preview h2,
-  .hero h1,
-  .artikel h1,
-  .artikel h2 {
-    color: #4ade80;
+  .nav-menu.active {
+    display: flex;
   }
 
-  .hero-sub,
-  p {
-    color: #cbd5f5;
+  .nav-menu li a {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
   }
+}
 
-  .btn-outline {
-    border-color: #4ade80;
-    color: #4ade80;
-  }
+/* ================= HERO ================= */
+.hero {
+  padding: 90px 20px;
+  text-align: center;
+  background: #f1f8f4;
+}
 
-  .btn-outline:hover {
-    background: #4ade80;
-    color: #022c22;
-  }
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  color: #2e7d32;
+}
 
-  footer {
-    background: #14532d;
-  }
+.hero-sub {
+  font-size: 18px;
+  color: #555;
+}
 
-  .produk {
-    background: #020617;
-    border-color: #1e293b;
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 36px;
   }
+}
 
-  .harga {
-    color: #4ade80;
+/* ================= SECTION ================= */
+section {
+  padding: 30px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #2e7d32;
+  color: white;
+}
+
+/* ================= IMAGE SYSTEM (FIX AMAN) ================= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* LOGO UMUM */
+.logo {
+  width: 64px;
+  margin: 12px auto;
+}
+
+/* GALERI */
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.galeri img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ================= ARTIKEL ================= */
+.artikel {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.foto-artikel,
+.artikel img {
+  max-width: 220px;
+  margin: 20px auto;
+  border-radius: 14px;
+}
+
+/* ================= MARKETPLACE ================= */
+.produk-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 900px) {
+  .produk-list {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.produk {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 10px;
+  text-align: center;
+}
+
+.produk img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ================= DARK MODE ================= */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark .hero {
+  background: #1b1b1b;
+}
+
+body.dark .produk {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark footer {
+  background: #1b5e20;
 }
