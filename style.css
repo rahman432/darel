@@ -207,3 +207,82 @@ body.dark .produk {
 body.dark footer {
   background: #1b5e20;
 }
+
+/* ===== FIX GAMBAR TANPA NGERUSAK AESTHETIC ===== */
+
+/* gambar di artikel */
+.artikel img {
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+}
+
+/* gambar pertama (logo) di artikel */
+.artikel img:first-of-type {
+  max-width: 140px;
+}
+
+/* galeri biar konsisten */
+.galeri img {
+  height: 160px;
+  object-fit: cover;
+}
+
+/* gambar marketplace */
+.produk img {
+  max-height: 130px;
+  object-fit: cover;
+}
+
+/* ===== FIX LOGO NAVBAR ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+/* logo di kiri */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ukuran logo */
+.nav-logo img {
+  width: 42px;      /* kecil & rapi */
+  height: auto;
+}
+
+/* ===== FIX MARKETPLACE CARD ===== */
+.produk-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.produk {
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+}
+
+/* gambar produk */
+.produk img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* judul & harga */
+.produk h3 {
+  font-size: 14px;
+  margin: 8px 0 4px;
+}
+
+.harga {
+  font-size: 13px;
+}
